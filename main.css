@@ -1,0 +1,300 @@
+html, body {
+     margin: 0%;
+     padding: 0%;
+     width: 100%;
+     height: 100vh;
+     font-family: "Silk Serif" !important;
+     background: #121212;
+     cursor:url('cursor.png'), auto !important;
+}
+
+/* cursor */
+
+.wrap {
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     overflow: hidden !important;
+     z-index: 2;
+}
+
+#ball {
+     width: 60px;
+     height: 60px;
+     background: none;
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     border-radius: 50%;
+     mix-blend-mode: exclusion;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     margin: -10px 0 0 -10px;
+     pointer-events: none;
+     z-index: 2;
+}
+
+/* loading screen */
+
+.loading-screen {
+     position: absolute;
+     margin: 0%;
+     padding: 0%;
+     width: 100%;
+     height: 100vh;
+     z-index: 2;
+     background: #0f0f0f;
+}
+
+.loading-screen .intro {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+}
+
+.loading-screen .intro h1 {
+     font-weight: 300;
+     color: #fff;
+}
+
+.intro-title .letter {
+     display: inline-block;
+     line-height: 1em;
+}
+
+/* backgrounds */
+
+.hero--left {
+     position: absolute;
+     height: 100vh;
+     background: url(hero--left.jpg) no-repeat 100% 50%;
+     background-size: cover;
+     animation: animatedBackground1 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+     animation-delay: 4.8s;     
+}
+
+@keyframes animatedBackground1 {  
+     from {
+       background-position: 50% 50%;
+     }  
+     to {
+       background-position: 100% 50%;
+     }
+}
+
+.hero--middle {
+     background: #121212;
+}
+
+.hero--right {
+     position: absolute;
+     background: url(hero--right.jpg) no-repeat 50% 50%;
+     background-size: 124%;
+     animation: animatedBackground2 5s cubic-bezier(0.19, 1, 0.22, 1);
+     animation-delay: 3.8s; 
+}
+
+@keyframes animatedBackground2 {
+     from {
+       background-size: 280%;
+     }
+     to {
+       background-size: 124%;
+     }
+}
+
+/* content */
+
+.logo {
+     position: absolute;
+     z-index: 1;
+     font-size: 11px;
+     color: rgba(255, 255, 255, 0.4);
+     line-height: 85px;
+     left: 21%;
+}
+
+.logo span {
+     color: #FFF;
+}
+
+.year {
+     position: absolute;
+     z-index: 1;
+     line-height: 85px;
+     right: 38.5%;
+     color: #fff;
+     font-size: 11px !important; 
+}
+
+.overlay-text {
+     position: absolute;
+     color: red;
+     z-index: 1;
+     font-size: 148px;
+     font-weight: 200;
+     transform: rotate(-18deg);
+     top: 26%;
+     left: 4%; 
+     mix-blend-mode: color;
+     opacity: 0;
+     animation: blinker 1s linear infinite;
+     animation-delay: 10s;
+
+}
+
+@keyframes blinker {   
+    
+     50% {
+       opacity: 1;
+     }
+
+}
+
+.hero-title {
+     position: absolute;
+     z-index: 1;
+     top: 66%;
+     left: 43%;
+     color: #fff;
+     font-weight: 200 !important;
+     font-size: 22px;
+     letter-spacing: 6px;
+     text-transform: uppercase;
+}
+
+.hero-title .letter {
+     display: inline-block;
+}
+
+.bar {
+     position: absolute;
+     z-index: 1;
+     bottom: 7%;
+     left: 22%;
+     width: 165px;
+     height: .5pt;
+     background: rgba(255, 255, 255, 0.2);
+}
+
+.project {
+     position: absolute;
+     z-index: 1;
+     bottom: 6%;
+     right: 38.5%;
+     color: grey;
+     font-size: 9px; 
+}
+
+.media {
+     position: absolute;
+     z-index: 1;
+     bottom: 2%;
+     right: 2%;
+}
+
+.media ul {
+     list-style: none;
+}
+
+.media ul li {
+     display: inline-block;
+     color: #999999;
+     font-family: "Poppins";
+     font-size: 9px;
+     padding-right: 16px;
+}
+
+/* loading-screen*/
+
+.loading-screen {
+     position: absolute;
+     margin: 0%;
+     padding: 0%;
+     width: 100%;
+     height: 100vh;
+     z-index: 2;
+     background: #0f0f0f;
+}
+
+.loading-screen .intro {
+     position: absolute;
+     top: 48%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+}
+
+.loading-screen .intro h1 {
+     font-weight: 300;
+     color: #fff;
+
+}
+
+.intro-title .letter {
+     display: inline-block;
+     line-height: 1em;
+}
+
+/* responsiveness */
+
+@media(max-width: 678px) {
+
+     .hero--left {
+          background: url(hero--right.jpg) no-repeat 50% 50%;
+          background-size: cover;
+     }
+
+     .hero--middle, .hero--right {
+          display: none;
+     }
+
+     .wrap {
+          display: none;
+     }
+
+     .logo {
+          left: 0%;
+          margin-left: 24px; 
+     }
+
+     .year {
+          right: 0%;
+          margin-right: 24px;
+     }
+
+     .hero-title {
+          position: absolute;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          letter-spacing: 0px;
+          font-size: 16px;
+     }
+
+     .overlay-text {
+          display: none;
+     }
+
+     .bar {
+          display: none;
+     }
+
+     .project {
+          display: none;
+     }
+}
+
+
+@media(max-width: 798px) {
+     .intro h1 {
+          font-size: 24px;
+     }
+}
+
+
+
